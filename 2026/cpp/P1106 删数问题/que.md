@@ -34,6 +34,6 @@
 
 ## 说明/提示
 
-用 $\operatorname{len}(n)$ 表示 $n$ 的**位数**，保证 $1 \leq k < \operatorname{len}(n) \leq 250$。
+用 $\\mathrm{len}(n)$ 表示 $n$ 的**位数**，保证 $1 \leq k < \\mathrm{len}(n) \leq 250$。
 
 **注意：去掉若干数字后剩下的数可以存在前导零，而输出时不要输出前导零。**
