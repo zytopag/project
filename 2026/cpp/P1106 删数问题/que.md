@@ -1,4 +1,3 @@
-/*
 # P1106 删数问题
 
 ## 题目描述
@@ -38,48 +37,3 @@
 用 $\operatorname{len}(n)$ 表示 $n$ 的**位数**，保证 $1 \leq k < \operatorname{len}(n) \leq 250$。
 
 **注意：去掉若干数字后剩下的数可以存在前导零，而输出时不要输出前导零。**
-
-*/
-
-
-#include<iostream>
-#include<string>
-using namespace std;
-
-int main(){
-
-    string n;
-    int k;
-    cin>>n>>k;
-    
-    string ret = "";
-    for(char c : n){
-        if(ret.empty()){
-            ret.push_back(c);
-            continue;
-        }
-        while(k > 0 && ret.back() > c){
-            ret.pop_back();
-            k--;
-        }
-        ret.push_back(c);
-    }
-    //还有剩余删数，退栈顶
-    while(k>0){
-        ret.pop_back();
-        k--;
-    }
-    //有前导0
-    int i = 0;
-    while(i < ret.size() && ret[i] == '0'){
-        i++;
-    }
-
-    if(i == ret.size()){
-        cout<<"0";
-    }else{
-        cout<<ret.substr(i);
-    }
-    
-    return 0;
-}
